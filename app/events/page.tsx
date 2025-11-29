@@ -1,29 +1,21 @@
-import React from "react";
-import ExploreButton from "@/app/components/ExploreButton";
+"use cache"
 import EventCard from "@/app/components/EventCard";
 import { IEvent } from "@/database";
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
-const Home = async () => {
-  "use cache"
-  const response = await fetch(`${BASE_URL}/api/events`, {
-    cache: "no-store",
-  });
+const EventsPage = async () => {
+  const response = await fetch(`${BASE_URL}/api/events`);
 
   const { events } = await response.json();
 
   return (
     <section>
-      <h1 className="text-center">
-        The Hub for Every Dev <br /> Event you Can't miss
-      </h1>
-      <p className="text-center mt-5">
-        Hackathons, meetups, and Conferences, All in One Place
+      <h1 className="text-center mb-5">All Events</h1>
+      <p className="text-center text-light-100 mb-10">
+        Discover and explore all upcoming hackathons, meetups, and conferences
       </p>
-      <ExploreButton />
       <div className="mt-7 space-y-7">
-        <h3>Featured Events</h3>
         <ul className="events">
           {events &&
             events.length > 0 &&
@@ -40,4 +32,4 @@ const Home = async () => {
     </section>
   );
 };
-export default Home;
+export default EventsPage;
