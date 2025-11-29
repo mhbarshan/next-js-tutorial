@@ -2,17 +2,18 @@ import React from "react";
 import ExploreButton from "@/app/components/ExploreButton";
 import EventCard from "@/app/components/EventCard";
 import { IEvent } from "@/database";
-export const dynamic = "force-dynamic";
+import events from "@/lib/constant";
+
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
 const Home = async () => {
   "use cache"
-  const response = await fetch(`${BASE_URL}/api/events`, {
-    cache: "no-store",
-  });
+  // const response = await fetch(`${BASE_URL}/api/events`, {
+  //   cache: "no-store",
+  // });
 
-  const { events } = await response.json();
+  // const { events } = await response.json();
 
   return (
     <section>
