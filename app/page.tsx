@@ -2,6 +2,7 @@ import React from "react";
 import ExploreButton from "@/app/components/ExploreButton";
 import EventCard from "@/app/components/EventCard";
 import { IEvent } from "@/database";
+export const dynamic = "force-dynamic";
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
