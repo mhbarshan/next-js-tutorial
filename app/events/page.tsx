@@ -1,14 +1,15 @@
 "use cache"
 import EventCard from "@/app/components/EventCard";
 import { IEvent } from "@/database";
+import events from "@/lib/constant";
 
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
 const EventsPage = async () => {
-  const response = await fetch(`${BASE_URL}/api/events`);
+  // const response = await fetch(`${BASE_URL}/api/events`);
 
-  const { events } = await response.json();
+  // const { events } = await response.json();
 
   return (
     <section>
